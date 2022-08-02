@@ -1,0 +1,24 @@
+@mixin absoluteCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin absoluteHorCenter($top, $bottom: 0) {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+
+  @if ($top != 0){
+    top: $top;
+  } @else{
+    bottom: $bottom;
+  }
+}
+
+@mixin flexCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

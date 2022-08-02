@@ -1,0 +1,29 @@
+$small-w: 480px;
+$medium-w: 767px;
+$large-w: 1024px;
+$extra-large-w: 1200px;
+
+
+@mixin small-screen {
+  @media (max-width: #{small-w}) {
+    @content;
+  }
+}
+
+@mixin medium-screen {
+  @media (max-width: #{$medium-w}) {
+    @content;
+  }
+}
+
+@mixin large-screen {
+  @media (max-width: #{$large-w}) {
+    @content;
+  }
+}
+
+@mixin extraLarge-screen {
+  @media (max-width: #{$extra-large-w}) {
+    @content;
+  }
+}
