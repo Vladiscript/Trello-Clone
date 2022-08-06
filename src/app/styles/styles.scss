@@ -4,4 +4,13 @@
 
 body {
   font-family: $font-family-roboto;
+  font-size: $font-size-s;
+  color: $main-text-color;
+}
+
+.subtitle {
+  font-size: $font-size-xs;
+  font-weight: $font-weight-bold;
+  color: $light-text-color;
+  padding: 8px;
 }

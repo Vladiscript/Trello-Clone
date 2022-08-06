@@ -1,0 +1,42 @@
+<div class="home__container">
+  <nav class="home__sidebar">
+    <div class="tabs">
+      <ul>
+        <li class="sidebar__item" routerLinkActive="active">
+          <a routerLink="/boards">
+            Boards
+          </a>
+        </li>
+        <li class="sidebar__item" [routerLinkActive]="'active'">
+          <a routerLink="/templates">
+            Templates
+          </a>
+        </li>
+        <li class="sidebar__item" [routerLinkActive]="'active'">
+          <a routerLink="/home">
+            Home
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="workspaces">
+      <div class="subtitle">Workspaces</div>
+      <ul>
+        <li class="sidebar__item btn">
+          <button>
+            <mat-icon class="sidebar__item-icon">add</mat-icon>
+            <span>Create a Workspace</span>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="home__boards">
+    <h3 class="boards__header">YOUR WORKSPACES</h3>
+    <p class="boards__text">
+      You aren't a member of any workspaces yet.
+      <button>Create a workspace</button>
+    </p>
+    <button class="view-all-btn">View all closed boards</button>
+  </div>
+</div>

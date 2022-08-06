@@ -1,1 +1,30 @@
-<p>header works!</p>
+<div class="header__wrapper">
+  <nav class="header__nav">
+    <a href="/" class="header__logo">
+      <img src="assets/images/logo.png" alt="Logo">
+    </a>
+      <button class="header__button">
+        <span>Workspaces</span>
+        <mat-icon class="arrow">keyboard_arrow_down</mat-icon>
+      </button>
+      <button class="header__button">
+        <span>Starred</span>
+        <mat-icon class="arrow">keyboard_arrow_down</mat-icon>
+      </button>
+      <button class="header__button create">
+        <span>Create</span>
+      </button>
+  </nav>
+  <div class="header__controls">
+    <div class="header__search-container">
+      <input class="header__search-input" type="text" placeholder="Search">
+      <mat-icon class="search-icon">search</mat-icon>
+    </div>
+    <div class="header__icon">
+      <mat-icon>notifications_none</mat-icon>
+    </div>
+    <div class="header__icon">
+      <img src="assets/images/profile-icon.png" alt="Profile">
+    </div>
+  </div>
+</div>

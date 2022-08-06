@@ -1,10 +1,26 @@
 //Fonts
 $font-family-roboto: 'Roboto', sans-serif;
 
-$font-weight-normal: 400;
+$font-size-xs: 12px;
+$font-size-s: 14px;
+$font-size-m: 16px;
+$font-size-l: 18px;
+$font-size-xl: 24px;
+
 $font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
 $font-weight-bold: 700;
 
 //Colors
 $white: #fff;
 $black: #000;
+$main-blue-color: #026aa7;
+$dark-blue: #014a75;
+$lightGrey-color: #e9e9ed;
+$main-text-color: #172b4d;
+$light-text-color: #5E6C84;
+
+$active-button-color: #e4f0f6;
+$header-active-color: rgba(255, 255, 255, 0.2);
+$header-hover-color: rgba(255, 255, 255, 0.3);
