@@ -17,8 +17,7 @@
   }
 }
 
-@mixin flexCenter {
+@mixin flexAlignCenter {
   display: flex;
   align-items: center;
-  justify-content: center;
 }

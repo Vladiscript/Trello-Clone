@@ -2,17 +2,17 @@
   <nav class="home__sidebar">
     <div class="tabs">
       <ul>
-        <li class="sidebar__item" routerLinkActive="active">
+        <li class="sidebar__item grey-hover" routerLinkActive="active">
           <a routerLink="/boards">
             Boards
           </a>
         </li>
-        <li class="sidebar__item" [routerLinkActive]="'active'">
+        <li class="sidebar__item grey-hover" [routerLinkActive]="'active'">
           <a routerLink="/templates">
             Templates
           </a>
         </li>
-        <li class="sidebar__item" [routerLinkActive]="'active'">
+        <li class="sidebar__item grey-hover" [routerLinkActive]="'active'">
           <a routerLink="/home">
             Home
           </a>
@@ -22,7 +22,7 @@
     <div class="workspaces">
       <div class="subtitle">Workspaces</div>
       <ul>
-        <li class="sidebar__item btn">
+        <li class="sidebar__item create-btn grey-hover">
           <button>
             <mat-icon class="sidebar__item-icon">add</mat-icon>
             <span>Create a Workspace</span>
@@ -32,11 +32,76 @@
     </div>
   </nav>
   <div class="home__boards">
+
+    <div class="boards__section">
+
+      <div class="boards__section-header">
+        <div class="boards__section-title">
+          <mat-icon class="title-icon">star_border</mat-icon>
+          <h3 class="title">Starred boards</h3>
+        </div>
+      </div>
+
+      <ul class="boards__list">
+        <li class="boards__list-item">
+          <a href="/boards" class="board__tile">
+            <div class="board__tile-details">
+              <div class="board__tile-details__name">CRM</div>
+              <div class="board__tile-details__sub-container">
+                <div class="board__tile-details__sub-name">Inventorsoft</div>
+                <mat-icon class="board__tile-details__star">star</mat-icon>
+              </div>
+            </div>
+          </a>
+        </li>
+      </ul>
+
+    </div>
+
     <h3 class="boards__header">YOUR WORKSPACES</h3>
-    <p class="boards__text">
-      You aren't a member of any workspaces yet.
-      <button>Create a workspace</button>
-    </p>
-    <button class="view-all-btn">View all closed boards</button>
+    <ng-container *ngIf="!isWorkspaces">
+      <p class="boards__text">
+        You aren't a member of any workspaces yet.
+        <button>Create a workspace</button>
+      </p>
+    </ng-container>
+
+    <div class="boards__section">
+
+      <div class="boards__section-header">
+        <div class="boards__section-title">
+          <div class="boards__section-header-icon">I</div>
+          <h3 class="title">Inventorsoft</h3>
+        </div>
+        <div class="boards__section-controls">
+          <div class="grey-hover controls__item ">
+            <mat-icon class="controls__item-icon">person</mat-icon>
+            <div class="controls__item-name">Members</div>
+          </div>
+        </div>
+      </div>
+
+      <ul class="boards__list">
+        <li class="boards__list-item">
+          <a href="/boards" class="board__tile">
+            <div class="board__tile-details">
+              <div class="board__tile-details__name">CRM</div>
+              <div class="board__tile-details__sub-container">
+                <div class="board__tile-details__sub-name">Inventorsoft</div>
+                <mat-icon class="board__tile-details__star">star</mat-icon>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li class="boards__list-item grey-hover" (click)="openModal($event)">
+          <a href="#" class="board__tile add-board ">
+            Create new board
+          </a>
+        </li>
+      </ul>
+
+    </div>
+
+    <button class="view-all-btn grey-hover">View all closed boards</button>
   </div>
 </div>

@@ -1,0 +1,76 @@
+@import "~src/app/styles/base";
+
+.modal {
+  &__header {
+    margin-bottom: 8px;
+    padding: 0 12px;
+    position: relative;
+    text-align: center;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 12px 1fr 12px;
+  }
+
+  &__title {
+    border-bottom: 1px solid rgba(9, 30, 66, 0.13);
+    color: #5e6c84;
+    height: 40px;
+    display: block;
+    line-height: 40px;
+    margin: 0;
+    overflow: hidden;
+    padding: 0 32px;
+    position: relative;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    grid-column: 1 / span 3;
+    grid-row: 1;
+  }
+
+  &__close {
+    @include flexAlignCenter;
+    grid-column: 3;
+    grid-row: 1;
+    background: transparent;
+    border: none;
+    color: #6b778c;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+    z-index: 2;
+    outline: none;
+    font-size: $font-size-l;
+  }
+
+  &__body {
+    padding: 10px;
+  }
+
+  &__list {
+    &-title {
+      font-size: $font-size-xs;
+      color: $light-text-color;
+      font-weight: $font-weight-bold;
+      margin: 0 8px 12px;
+    }
+
+    &-item {
+      @include flexAlignCenter;
+      margin: 0 8px 12px;
+
+      .item-icon {
+        @include flexAlignCenter;
+        justify-content: center;
+        background: $dark-blue;
+        border-radius: 3px;
+        width: 32px;
+        height: 32px;
+        margin-right: 10px;
+        overflow: hidden;
+        color: $white;
+        font-size: 20px;
+        font-weight: $font-weight-bold;
+      }
+    }
+  }
+}

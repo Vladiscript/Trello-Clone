@@ -27,24 +27,20 @@
         }
       }
 
-      &:hover {
-        background-color: $lightGrey-color;
-      }
-
       a {
         font-weight: $font-weight-bold;
         color: $main-text-color;
       }
 
-      &.btn {
+      &.create-btn {
         padding-left: 0;
       }
 
       button {
-        display: flex;
-        align-items: center;
+        @include flexAlignCenter;
+        background: transparent;
         width: 100%;
-        height: initial;
+        height: 100%;
         line-height: 20px;
         color: $light-text-color;
       }
@@ -68,6 +64,70 @@
     margin: 0 16px;
 
     .boards {
+
+      &__section {
+        padding-bottom: 20px;
+
+        &-header {
+          display: flex;
+          padding-bottom: 11px;
+
+          &-icon {
+            @include flexAlignCenter;
+            justify-content: center;
+            background: $dark-blue;
+            border-radius: 3px;
+            width: 32px;
+            height: 32px;
+            margin-right: 10px;
+            overflow: hidden;
+            color: $white;
+            font-size: 20px;
+            font-weight: $font-weight-bold;
+          }
+        }
+
+        &-title {
+          @include flexAlignCenter;
+          margin-bottom: 10px;
+        }
+
+        &-controls {
+          display: flex;
+          flex-wrap: wrap;
+          margin-left: 8px;
+          white-space: nowrap;
+
+          .controls {
+            &__item {
+              cursor: pointer;
+              @include flexAlignCenter;
+              background: $lightGrey-color;
+              border-radius: 3px;
+              box-shadow: none;
+              margin-bottom: 8px;
+              margin-left: 8px;
+              padding: 6px 12px 6px 6px;
+
+              &-name {
+                margin-left: 4px;
+              }
+            }
+          }
+        }
+      }
+
+      &__list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+
+        &-item {
+          cursor: pointer;
+          width: 23.5%;
+          margin: 0 2% 2% 0;
+        }
+      }
 
       &__header {
         color: $light-text-color;
@@ -97,6 +157,70 @@
     }
   }
 }
+
+
+.board {
+  &__tile {
+    display: block;
+    height: 96px;
+    border-radius: 3px;
+    color: $white;
+    padding: 8px;
+    text-decoration: none;
+    background: grey;
+
+    &:hover {
+      opacity: .9;
+    }
+
+    &.add-board {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $main-text-color;
+      background: $lightGrey-color;
+    }
+
+    &-name {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      word-wrap: break-word;
+      font-size: $font-size-m;
+      font-weight: $font-weight-bold;
+    }
+
+    &-details {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+
+      &__sub-container {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+      }
+
+      &__sub-name {
+        display: block;
+        flex: 1 1 auto;
+        letter-spacing: .02em;
+        line-height: 18px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 100%;
+      }
+
+      &__star {
+        @include flexAlignCenter;
+        color: yellow;
+        font-size: $font-size-l;
+      }
+    }
+  }
+}
+
 
 .view-all-btn {
   background-color: $lightGrey-color;

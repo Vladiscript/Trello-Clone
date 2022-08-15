@@ -3,15 +3,15 @@
     <a href="/" class="header__logo">
       <img src="assets/images/logo.png" alt="Logo">
     </a>
-      <button class="header__button">
+      <button class="header__button" (click)="openModal($event)">
         <span>Workspaces</span>
         <mat-icon class="arrow">keyboard_arrow_down</mat-icon>
       </button>
-      <button class="header__button">
+      <button class="header__button" (click)="openModal($event)">
         <span>Starred</span>
         <mat-icon class="arrow">keyboard_arrow_down</mat-icon>
       </button>
-      <button class="header__button create">
+      <button class="header__button create" (click)="openModal($event)">
         <span>Create</span>
       </button>
   </nav>

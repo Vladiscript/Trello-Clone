@@ -85,6 +85,7 @@
       background-color: $header-active-color;
       border: 1px solid $header-hover-color;
       border-radius: 3px;
+      caret-color: $white;
 
       &::placeholder {
         color: $white;
