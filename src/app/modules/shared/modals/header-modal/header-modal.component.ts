@@ -1,6 +1,8 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { HeaderModalService } from './header-modal.service';
+import { HeaderModalService } from './services/header-modal.service';
+import { CreateBoardModalService } from '../create-board-modal/services/create-board-modal.service';
+import { CreateWorkspaceModalService } from '../create-workspace-modal/services/create-workspace-modal.service';
 
 @Component({
   selector: 'app-header-modal',
@@ -9,9 +11,13 @@ import { HeaderModalService } from './header-modal.service';
 })
 export class HeaderModalComponent implements OnInit {
 
+  modalId$ = this.headerModalService.modalId$;
+
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: { id: string },
     private headerModalService: HeaderModalService,
+    private createBoardModalService: CreateBoardModalService,
+    private createWorkspaceModalService: CreateWorkspaceModalService,
     private dialogRef: MatDialogRef<HeaderModalComponent>
   ) {
   }
@@ -20,7 +26,17 @@ export class HeaderModalComponent implements OnInit {
   }
 
   onClose() {
-    this.dialogRef.close()
+    this.dialogRef.close();
   }
 
+  openCreateBoardModal(element: any): void {
+    this.dialogRef.close();
+    const leftValue = element.currentTarget.offsetLeft + element.currentTarget.offsetWidth;
+    this.createBoardModalService.openModal(leftValue);
+  }
+
+  openCreateWorkspaceModal() {
+    this.dialogRef.close();
+    this.createWorkspaceModalService.openModal();
+  }
 }

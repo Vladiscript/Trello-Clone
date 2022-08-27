@@ -3,26 +3,26 @@
     <a href="/" class="header__logo">
       <img src="assets/images/logo.png" alt="Logo">
     </a>
-      <button class="header__button" (click)="openModal($event)">
-        <span>Workspaces</span>
-        <mat-icon class="arrow">keyboard_arrow_down</mat-icon>
-      </button>
-      <button class="header__button" (click)="openModal($event)">
-        <span>Starred</span>
-        <mat-icon class="arrow">keyboard_arrow_down</mat-icon>
-      </button>
-      <button class="header__button create" (click)="openModal($event)">
-        <span>Create</span>
-      </button>
+    <button class="header__button" (click)="openModal($event, 'workspaces')">
+      <span>Workspaces</span>
+      <mat-icon class="arrow">keyboard_arrow_down</mat-icon>
+    </button>
+    <button class="header__button" (click)="openModal($event, 'starred')">
+      <span>Starred</span>
+      <mat-icon class="arrow">keyboard_arrow_down</mat-icon>
+    </button>
+    <button class="header__button create" (click)="openModal($event, 'create')">
+      <span>Create</span>
+    </button>
   </nav>
   <div class="header__controls">
     <div class="header__search-container">
       <input class="header__search-input" type="text" placeholder="Search">
       <mat-icon class="search-icon">search</mat-icon>
     </div>
-    <div class="header__icon">
+    <button class="header__icon">
       <mat-icon>notifications_none</mat-icon>
-    </div>
+    </button>
     <div class="header__icon">
       <img src="assets/images/profile-icon.png" alt="Profile">
     </div>

@@ -1,15 +1,17 @@
 import { Injectable } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { HeaderModalComponent } from './header-modal.component';
+import { CreateBoardModalComponent } from '../create-board-modal.component';
 
-@Injectable()
-export class HeaderModalService {
+@Injectable({
+  providedIn: 'root'
+})
+export class CreateBoardModalService {
 
   constructor(private dialog: MatDialog) {
   }
 
-  openModal(leftValue: string): void {
-    this.dialog.open(HeaderModalComponent,
+  openModal(leftValue: number): void {
+    this.dialog.open(CreateBoardModalComponent,
       {
         panelClass: 'header-modal__container',
         hasBackdrop: false,

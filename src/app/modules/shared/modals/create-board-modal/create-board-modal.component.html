@@ -1,0 +1,48 @@
+<div class="modal__container" appClickOutside (clickOutside)="onClose()">
+
+  <div class="modal__header">
+    <div class="modal__title">Create board</div>
+    <mat-icon class="modal__close" (click)="onClose()">close</mat-icon>
+  </div>
+  <div class="modal__body">
+    <div class="board__preview">
+      <div class="board__preview-body" [style.background]="chosenBackground">
+        <img class="board__preview-image"
+             src="https://a.trellocdn.com/prgb/dist/images/board-preview-skeleton.14cda5dc635d1f13bc48.svg"
+             alt="Board-preview">
+      </div>
+    </div>
+    <div class="board__backgrounds">
+      <div class="xs-light-text bold">Background</div>
+      <ul class="backgrounds__list">
+        <li class="backgrounds__list-item image" *ngFor="let background of backgrounds; let i = index">
+          <button [class]="{chosen: i === 0}" [style.background-image]="background"
+                  (click)="chooseBackground($event, background)">
+            <mat-icon class="choose-icon">check</mat-icon>
+          </button>
+        </li>
+      </ul>
+      <ul class="backgrounds__list">
+        <li class="backgrounds__list-item color" *ngFor="let color of colors">
+          <button [style.background-color]="color"
+                  (click)="chooseBackground($event, color)">
+            <mat-icon class="choose-icon">check</mat-icon>
+          </button>
+        </li>
+      </ul>
+    </div>
+    <form class="modal__form" [formGroup]="formGroup">
+      <div class="modal__form-field">
+        <label for="title" class="xs-light-text bold">Board title</label>
+        <input [class]="{error: title?.invalid}" class="input-field" formControlName="title" id="title" type="text">
+        <div class="field-error" *ngIf="title?.invalid">Board title is required</div>
+      </div>
+      <div class="modal__form-field">
+        <label for="workspace" class="xs-light-text bold">Workspace</label>
+        <app-select id="workspace" [options]="workspaces" (onSelect)="selectWorkspace($event)"></app-select>
+      </div>
+      <button class="modal__form-button" [disabled]="formGroup.invalid">Create</button>
+    </form>
+  </div>
+
+</div>

@@ -1,6 +1,13 @@
 @import "~src/app/styles/base";
 
 .modal {
+
+  &__container {
+    font-family: $font-family-roboto;
+    font-size: $font-size-s;
+    color: $main-text-color;
+  }
+
   &__header {
     margin-bottom: 8px;
     padding: 0 12px;
@@ -42,10 +49,6 @@
     font-size: $font-size-l;
   }
 
-  &__body {
-    padding: 10px;
-  }
-
   &__list {
     &-title {
       font-size: $font-size-xs;
@@ -70,6 +73,67 @@
         color: $white;
         font-size: 20px;
         font-weight: $font-weight-bold;
+      }
+    }
+  }
+
+  &__board {
+    @include flexAlignCenter;
+    text-decoration: none;
+    flex: 1;
+    height: 32px;
+
+    &:hover {
+      cursor: inherit;
+      background: $grey-hover-color;
+    }
+
+    .board {
+
+      &__image {
+        width: 40px;
+        height: 32px;
+        background: grey;
+        border-radius: 3px;
+        flex: 0 0 auto;
+        background-size: cover;
+      }
+
+      &__description {
+        padding-left: 8px;
+        width: 100%;
+        display: flex;
+        position: relative;
+        flex: 1;
+        flex-direction: column;
+        justify-content: center;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      &__name {
+        font-weight: $font-weight-medium;
+      }
+
+    }
+  }
+
+  &__create {
+    &-btn {
+      padding: 6px 12px;
+      text-align: left;
+
+      &:hover {
+        background: $grey-hover-color;
+      }
+
+      &__header {
+        @include flexAlignCenter;
+      }
+
+      &__text {
+        margin-top: 4px;
       }
     }
   }

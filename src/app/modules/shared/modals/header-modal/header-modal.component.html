@@ -1,15 +1,65 @@
 <div class="modal__container" appClickOutside (clickOutside)="onClose()">
-  <div class="modal__header">
-    <div class="modal__title">Workspaces</div>
-    <mat-icon class="modal__close">close</mat-icon>
-  </div>
-  <div class="modal__body">
-    <ul class="modal__list">
-      <div class="modal__list-title">Your Workspaces</div>
-      <li class="modal__list-item">
-          <div class="item-icon">I</div>
-          <h3 class="item-title">Inventorsoft</h3>
-      </li>
-    </ul>
-  </div>
+
+  <ng-container *ngIf="modalId$ | async; let modalId" [ngSwitch]='modalId'>
+    <div class="modal__header">
+      <div class="modal__title">{{modalId | titlecase}}</div>
+      <mat-icon class="modal__close" (click)="onClose()">close</mat-icon>
+    </div>
+    <div class="modal__body">
+
+      <ng-container *ngSwitchCase="'workspaces'">
+        <ul class="modal__list">
+          <div class="modal__list-title">Your Workspaces</div>
+          <li class="modal__list-item">
+            <div class="item-icon">I</div>
+            <h3 class="item-title">Inventorsoft</h3>
+          </li>
+        </ul>
+      </ng-container>
+
+      <ng-container *ngSwitchCase="'starred'">
+        <ul class="modal__list">
+          <li class="modal__list-item">
+            <a href="#" class="modal__board">
+              <div class="board__image"></div>
+              <div class="board__description">
+                <div class="board__name">CRM</div>
+                <div class="board__sub-name xs-light-text">Inventorsoft</div>
+              </div>
+              <mat-icon class="star-icon">star</mat-icon>
+            </a>
+          </li>
+        </ul>
+      </ng-container>
+
+      <ng-container *ngSwitchCase="'create'">
+        <ul class="modal__list">
+          <li>
+            <button class="modal__create-btn" (click)="openCreateBoardModal($event)">
+              <div class="modal__create-btn__header">
+                <mat-icon class="default-icon">dashboard</mat-icon>
+                <div class="modal__create-btn__title">Create board</div>
+              </div>
+              <div class="modal__create-btn__text xs-light-text">
+                A board is made up of cards ordered on lists. Use it to manage projects, track information, or organize anything.
+              </div>
+            </button>
+          </li>
+          <li>
+            <button class="modal__create-btn" (click)="openCreateWorkspaceModal()">
+              <div class="modal__create-btn__header">
+                <mat-icon class="default-icon">people_outline</mat-icon>
+                <div class="modal__create-btn__title">Create Workspace</div>
+              </div>
+              <div class="modal__create-btn__text xs-light-text">
+                A Workspace is a group of boards and people. Use it to organize your company, side hustle, family, or friends.               </div>
+            </button>
+          </li>
+        </ul>
+      </ng-container>
+
+    </div>
+
+  </ng-container>
+
 </div>

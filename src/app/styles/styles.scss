@@ -8,6 +8,7 @@ body {
   font-size: $font-size-s;
   color: $main-text-color;
   line-height: 20px;
+  background: $page-color;
 }
 
 .grey-hover {
@@ -33,6 +34,31 @@ body {
   padding: 8px;
 }
 
+.xs-light-text {
+  font-size: $font-size-xs;
+  color: $light-text-color;
+  &.bold {
+    font-weight: $font-weight-bold;
+  }
+}
+
+.star-icon {
+  display: flex !important;
+  @include flexAlignCenter;
+  color: $orange-color;
+  font-size: $font-size-l;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.default-icon {
+  display: flex !important;
+  @include flexAlignCenter;
+  color: $main-text-color;
+  font-size: $font-size-l;
+}
+
 
 .header-modal__container {
   padding: 0;
@@ -46,4 +72,59 @@ body {
   box-sizing: border-box;
   outline: 0;
   overflow: hidden;
+}
+
+.create-workspace-modal__container {
+  overflow: auto;
+  padding: 0;
+  background-color: #ffffff;
+  border-radius: 3px;
+  box-shadow: 0 8px 16px -4px rgba(9, 30, 66, 0.25), 0 0 0 1px rgba(9, 30, 66, 0.08);
+  box-sizing: border-box;
+  outline: 0;
+}
+
+.modal__form-button {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background: $main-blue-color;
+  color: $white;
+  border-radius: 3px;
+  margin-top: 16px;
+  padding: 6px 12px;
+  line-height: 20px;
+
+  &[disabled] {
+    cursor: not-allowed;
+    background: rgba(9, 30, 66, 0.04);
+    color: $light-text-color;
+  }
+
+  &:hover {
+    opacity: .7;
+  }
+}
+
+.input-field {
+  outline: none;
+  border: 2px solid #dfe1e6;
+  transition-property: background-color, border-color, box-shadow;
+  transition-duration: 85ms;
+  transition-timing-function: ease;
+  border-radius: 3px;
+  padding: 8px 12px;
+  background-color: $page-color;
+  width: 100%;
+
+  &:focus {
+    border-color: $main-blue-color !important;
+  }
+
+  &.error {
+    border-color: $red-color;
+  }
+  &-error {
+    margin: 8px 0;
+  }
 }

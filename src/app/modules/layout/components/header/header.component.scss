@@ -57,7 +57,9 @@
   }
 
   &__icon {
+    display: flex;
     cursor: pointer;
+    color: inherit;
     margin-left: 10px;
     img {
       width: 32px;

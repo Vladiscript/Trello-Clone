@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HeaderModalService } from '../../../shared/modals/header-modal/header-modal.service';
+import { HeaderModalService } from '../../../shared/modals/header-modal/services/header-modal.service';
+import { ModalIdType } from '../../../shared/modals/header-modal/models/modal-id';
 
 @Component({
   selector: 'app-header',
@@ -14,8 +15,8 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  openModal(element: any): void {
-      this.headerModalService.openModal(element.currentTarget.offsetLeft);
+  openModal(element: any, modalId: ModalIdType): void {
+    this.headerModalService.openModal(element.currentTarget.offsetLeft, modalId);
   }
 
 }

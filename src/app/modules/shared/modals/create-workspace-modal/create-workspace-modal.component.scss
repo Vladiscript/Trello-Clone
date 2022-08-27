@@ -1,0 +1,49 @@
+@import "~src/app/styles/base";
+.modal {
+  &__container {
+    margin: 30px auto 20px;
+    padding: 0 30px;
+    color: $main-text-color;
+  }
+
+  &__form {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+
+    .form {
+
+      &__field {
+        margin-top: 15px;
+
+        label {
+          color: $main-text-color;
+        }
+
+        &-textarea {
+          width: 100%;
+          resize: none;
+        }
+      }
+
+      &__btn {
+        @include flexAlignCenter;
+        height: 48px;
+      }
+
+      &__header {
+        &-title {
+          font-size: $font-size-xl;
+          font-weight: $font-weight-bold;
+          margin-bottom: 12px;
+        }
+        &-text {
+          font-size: $font-size-l;
+          color: $light-text-color;
+
+        }
+      }
+    }
+  }
+}
+

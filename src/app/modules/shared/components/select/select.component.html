@@ -1,0 +1,12 @@
+<div class="select__container" id="workspace" appClickOutside (clickOutside)="close()">
+  <div class="select__body" (click)="toggleSelect()">
+    <span class="select__value">{{selectedOption}}</span>
+    <mat-icon class="select__icon">keyboard_arrow_down</mat-icon>
+  </div>
+  <div class="select__options" *ngIf="isOpenedSelect">
+    <div class="select__option" [class]="{selected: selectedOption === option}" *ngFor="let option of options"
+         (click)="selectOption($event ,option)">
+      {{option}}
+    </div>
+  </div>
+</div>

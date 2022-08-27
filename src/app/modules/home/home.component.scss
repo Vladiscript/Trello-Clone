@@ -211,12 +211,6 @@
         white-space: nowrap;
         width: 100%;
       }
-
-      &__star {
-        @include flexAlignCenter;
-        color: yellow;
-        font-size: $font-size-l;
-      }
     }
   }
 }

@@ -1,0 +1,27 @@
+<div class="modal__container">
+  <form class="modal__form">
+    <div class="form__header">
+      <div class="form__header-title">
+        Let's build a Workspace
+      </div>
+      <div class="form__header-text">Boost your productivity by making it easier for everyone to access boards in one
+        location.
+      </div>
+    </div>
+    <div class="form__body">
+      <div class="form__field">
+        <label  class="xs-light-text bold" for="name">Workspace name</label>
+        <input id="name" type="text" class="input-field" placeholder="Taco's Co.">
+      </div>
+      <div class="form__field">
+        <label for="workspace" class="xs-light-text bold">Workspace type</label>
+        <app-select id="workspace" [options]="workspaceTypes" (onSelect)="selectWorkspace($event)"></app-select>
+      </div>
+      <div class="form__field">
+        <label for="description" class="xs-light-text bold">Workspace description</label>
+        <textarea id="description" rows="6" class="form__field-textarea input-field"></textarea>
+      </div>
+      <button class="modal__form-button form__btn">Continue</button>
+    </div>
+  </form>
+</div>

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderModalComponent } from './header-modal.component';
-import { HeaderModalService } from './header-modal.service';
+import { HeaderModalService } from './services/header-modal.service';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ClickOutsideDirective } from '../../directives/click-outside.directive';

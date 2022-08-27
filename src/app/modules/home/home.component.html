@@ -23,7 +23,7 @@
       <div class="subtitle">Workspaces</div>
       <ul>
         <li class="sidebar__item create-btn grey-hover">
-          <button>
+          <button (click)="openCreateWorkspace()">
             <mat-icon class="sidebar__item-icon">add</mat-icon>
             <span>Create a Workspace</span>
           </button>
@@ -33,7 +33,7 @@
   </nav>
   <div class="home__boards">
 
-    <div class="boards__section">
+    <div class="boards__section" *ngIf="starredWorkspaces.length">
 
       <div class="boards__section-header">
         <div class="boards__section-title">
@@ -42,14 +42,14 @@
         </div>
       </div>
 
-      <ul class="boards__list">
+      <ul class="boards__list" >
         <li class="boards__list-item">
           <a href="/boards" class="board__tile">
             <div class="board__tile-details">
               <div class="board__tile-details__name">CRM</div>
               <div class="board__tile-details__sub-container">
                 <div class="board__tile-details__sub-name">Inventorsoft</div>
-                <mat-icon class="board__tile-details__star">star</mat-icon>
+                <mat-icon class="star-icon">star</mat-icon>
               </div>
             </div>
           </a>
@@ -62,11 +62,11 @@
     <ng-container *ngIf="!isWorkspaces">
       <p class="boards__text">
         You aren't a member of any workspaces yet.
-        <button>Create a workspace</button>
+        <button (click)="openCreateWorkspace()">Create a workspace</button>
       </p>
     </ng-container>
 
-    <div class="boards__section">
+    <div class="boards__section" *ngIf="isWorkspaces">
 
       <div class="boards__section-header">
         <div class="boards__section-title">
@@ -82,21 +82,21 @@
       </div>
 
       <ul class="boards__list">
-        <li class="boards__list-item">
+        <li class="boards__list-item" >
           <a href="/boards" class="board__tile">
             <div class="board__tile-details">
               <div class="board__tile-details__name">CRM</div>
               <div class="board__tile-details__sub-container">
                 <div class="board__tile-details__sub-name">Inventorsoft</div>
-                <mat-icon class="board__tile-details__star">star</mat-icon>
+                <mat-icon class="star-icon">star</mat-icon>
               </div>
             </div>
           </a>
         </li>
-        <li class="boards__list-item grey-hover" (click)="openModal($event)">
-          <a href="#" class="board__tile add-board ">
+        <li class="boards__list-item grey-hover">
+          <div class="board__tile add-board" (click)="openModal($event)">
             Create new board
-          </a>
+          </div>
         </li>
       </ul>
 
