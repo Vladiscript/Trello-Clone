@@ -14,6 +14,8 @@ import { CreateBoardModalModule } from './modules/shared/modals/create-board-mod
 import {
   CreateWorkspaceModalModule
 } from './modules/shared/modals/create-workspace-modal/create-workspace-modal.module';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import {
     MatIconModule,
     HeaderModalModule,
     CreateBoardModalModule,
-    CreateWorkspaceModalModule
+    CreateWorkspaceModalModule,
+    EffectsModule.forRoot([]),
+    StoreRouterConnectingModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
